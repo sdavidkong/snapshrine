@@ -24,14 +24,14 @@ If you are cloning this repo, make sure to install all necessary dependencies by
 
 This app uses react-dropzone to allow users to drag and drop image files directly onto the page. For querying data, it uses Apollo client and GraphQL. It uses arweave-js to upload images directly to arweave.
 
-Anytime you see window.arweaveWallet in the code, know that it's coming from the installed Arconnect wallet in the brower. You don't need to install anything via npm to have access to arweaveWallet.
+Anytime you see window.arweaveWallet in the code, know that it's coming from the installed Arconnect wallet in the browser. You don't need to install anything via npm to have access to arweaveWallet.
 
 ## Wallet Address
 
 Once connected, the user's Arconnect wallet address is passed as props to the Gallery component from App.js, just FYI.
 
-If you have any questions about this code or implementing it, please contact me via Twitter @shuaidavidkong
-
 ## GraphQL Query
 
 The query used to get image data from Arweave can be seen in the gallery component. This query filters all transactions by the connected wallet address which also have the tags with a Content-Type of image/png. Any image uploaded using SnapShrine will have this tag added automatically.
+
+If you have any questions about this code or implementing it, please contact me via Twitter @shuaidavidkong
