@@ -64,6 +64,12 @@ function App() {
           davidkong.eth
         </a>
       </h2>
+      <h2>
+        View code on{" "}
+        <a href="https://github.com/sdavidkong/snapshrine" target="_blank">
+          Github
+        </a>
+      </h2>
     </div>
   );
 }
