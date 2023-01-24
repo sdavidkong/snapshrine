@@ -1,38 +1,100 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;700&display=swap");
+
+h3 {
+  font-family: "Rajdhani", sans-serif;
+  font-size: 38px;
+  margin-left: 2rem;
+  margin-right: 1rem;
+}
+h2 {
+  font-family: "Rajdhani", sans-serif;
+  margin-left: 2rem;
+  margin-right: 1rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.container {
   min-height: 100vh;
+  padding: 1rem 2rem 1rem 2rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+}
+
+.dropzone {
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  max-width: 500px;
+  width: 85vw;
+  margin: 1rem 1rem 1rem 2rem;
+  background-color: #add8e6; /* baby blue */
+  border: solid 5px #ff6b6b;
+  transition: box-shadow 0.3s ease-in-out;
+  box-shadow: 0 0 0 0 transparent;
+  color: #333333;
+}
+
+.dropzone:hover {
+  background-color: #87cefa; /* light blue */
+  box-shadow: 0 0 0 10px rgba(77, 144, 254, 0.4);
+  border: solid 5px;
+  border-color: #ffff00;
+}
+.dropzone p {
+  text-align: center;
+  font-size: 24px;
+  padding: 10px;
+  font-family: "Rajdhani", sans-serif;
+}
+
+.button {
+  font-family: "Futura", sans-serif;
+  font-weight: bold;
+  outline: none;
+  border: 3px solid #130606;
+  backgroundcolor: white;
+  padding: 10px;
+  width: 200px;
+  marginbottom: 10;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 10px;
+  font-size: 20px;
+  font-family: "Rajdhani", sans-serif;
+}
+
+.button:hover {
+  background-color: #130606;
   color: white;
+  transition: all 0.2s ease-in-out;
 }
 
-.App-link {
-  color: #61dafb;
+.connectedButton {
+  outline: none;
+  border: 3px solid #130606;
+  background-color: #ff6b6b;
+  padding: 10px;
+  width: 200px;
+  marginbottom: 10;
+  text-align: center;
+  border-radius: 10px;
+  font-size: 20px;
+  font-family: "Rajdhani", sans-serif;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.image-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container img {
+  max-width: 300px;
+  max-height: 300px;
+  margin: 10px;
+  border: 1px solid gray;
+  object-fit: contain;
+  object-position: center;
 }
