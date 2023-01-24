@@ -1,10 +1,12 @@
-# Getting Started with Create React App
+# Getting Started with SnapShrine
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+SnapShrine lets anyone with an Arconnect wallet upload image files to Arweave. As soon as a user connects their wallet, they can see all the photos they've uploaded, on the same page. This front end uses GraphQL and Apollo client to query the official Arweave GraphQL endpoint, https://arweave.net/graphql.
+
 ## Available Scripts
 
-In the project directory, you can run:
+Just like any Create React App implementation, in the project directory, you can run:
 
 ### `npm start`
 
@@ -14,57 +16,22 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm test`
+## Notes on Dependencies
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+If you are cloning this repo, make sure to install all necessary dependencies by running the following:
 
-### `npm run build`
+### `npm install`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This app uses react-dropzone to allow users to drag and drop image files directly onto the page. For querying data, it uses Apollo client and GraphQL. It uses arweave-js to upload images directly to arweave.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Anytime you see window.arweaveWallet in the code, know that it's coming from the installed Arconnect wallet in the brower. You don't need to install anything via npm to have access to arweaveWallet.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Wallet Address
 
-### `npm run eject`
+Once connected, the user's Arconnect wallet address is passed as props to the Gallery component from App.js, just FYI.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+If you have any questions about this code or implementing it, please contact me via Twitter @shuaidavidkong
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## GraphQL Query
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The query used to get image data from Arweave can be seen in the gallery component. This query filters all transactions by the connected wallet address which also have the tags with a Content-Type of image/png. Any image uploaded using SnapShrine will have this tag added automatically.
