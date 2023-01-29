@@ -1,6 +1,6 @@
 import { gql, useQuery } from "@apollo/client";
 import Arweave from "arweave";
-import { useState } from "react";
+import "../App.css";
 import React from "react";
 
 const arweave = Arweave.init({
